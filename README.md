@@ -1,8 +1,8 @@
 # Coinbase Marketplace Ethsafari
 
-This is nft market place that connects to both coinbase wallet and Metamask
-NFT metadata is stored in IPFS and filecoin through nft.storage and NFT tokenURl reference stored in blockchain
-This marketplace allows a user to mint their own NFT to the blockchain... It allows the user to sell their nfts to other address
+This is an NFT Marketplace that connects to both coinbase wallet and Metamask crypto Wallets.
+NFT metadata is stored in IPFS and Filecoin through nft.storage and NFT tokenURl reference stored in blockchain.
+This Marketplace allows a user to mint their own NFT to the blockchain. It allows the user to sell their nfts to other address
 
 
 # cloning the project
