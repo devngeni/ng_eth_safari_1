@@ -1,4 +1,4 @@
-# Coinbase Marketplace Ethsafari
+# Ngeni Marketplace Ethsafari
 
 This is an NFT Marketplace that connects to both Coinbase wallet and Metamask crypto Wallets.
 NFT DATA(like metadata, images and other assests) is stored in IPFS and Filecoin through NFT.Storage and NFT tokenURl reference stored in blockchain.
