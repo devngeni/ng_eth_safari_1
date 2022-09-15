@@ -49,7 +49,7 @@ const Navbar = () => {
     
   return (
       <nav>
-          <div className='coinbaselogo'>CoinBase NFT MarketPlace</div>
+          <div className='coinbaselogo'>Ngeni NFT MarketPlace</div>
           <input type="text" placeholder="search Nfts from collection" className="searchbar"></input>
          
 
