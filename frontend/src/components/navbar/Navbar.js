@@ -53,7 +53,7 @@ const Navbar = () => {
           <input type="text" placeholder="search Nfts from collection" className="searchbar"></input>
          
 
-         <button className='collectionBtn'><a href='/Home' onClick={() => setActiveNav('#Home')} className={activeNav === '#Home' ? 'active' : ''}>Collections</a></button>
+         <button className='collectionBtn'><a href='/Home#Home' onClick={() => setActiveNav('#Home')} className={activeNav === '#Home' ? 'active' : ''}>Collections</a></button>
          <button className='createNftsBtn'><a href='/Home#createnft' onClick={() => setActiveNav('#createnft')} className={activeNav === '#createnft' ? 'active' : ''}>Create Your NFTs</a></button>
 
           {account? (<button className='connectWalletBtn'>connected:{ account}</button>):(<button className='connectWalletBtn' onClick={connectWallet}>connect wallet</button>)}

@@ -56,6 +56,25 @@ const CreateNft = () => {
       },
         selectedFile        
         );
+     
+      }  
+      
+    }   
+    catch (error) { 
+           
+      if (error) {        
+        toast.error("failed " + error.message);
+        setBtnBusy(false);
+      }
+    } 
+  } 
+
+  const MintNfts = async () => {
+    try {
+      await mintNFThandler()
+      if (metadataURL === null) {
+        await mintNFThandler();         
+      }
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       
@@ -75,15 +94,13 @@ const CreateNft = () => {
         updateFormParams({ name: "", description: "", price: "" });
         toast.success("Mint Successfull !");
         setBtnBusy(false);
-      }  
-      
-    }   
-    catch (error) {      
-      if (error) {
-        toast.error("failed "+error.message);
+    } catch (error) {
+      if (error) {        
+        toast.error("failed " + error.message);
+        setBtnBusy(false);
       }
-    } 
-  } 
+    }
+  }
   
   useEffect(() => {
       if (IPFSuploading) {
@@ -104,7 +121,7 @@ const CreateNft = () => {
           <div className="name">NFT Name </div>
             <input
               type="text"
-              placeholder="your NFT name _avoid_name_spacing!!"
+              placeholder="your NFT name"
               className="inputname"
               value={formParams.name}
               id={formParams.name}
@@ -120,8 +137,9 @@ const CreateNft = () => {
               className="textarea"
               id={formParams.description}
               value={formParams.description}
-              onChange={(e) => updateFormParams({ ...formParams, description: e.target.value })}></textarea>
-          
+            onChange={(e) => updateFormParams({ ...formParams, description: e.target.value })}>
+          </textarea>
+
           <div className="price">price (In ETH)</div>
           <input
             type="number"
@@ -137,7 +155,7 @@ const CreateNft = () => {
           <div className="selectfile">upload NFT  <br/>
             <input ref={inputFileRef} type="file" onChange={(e) => setSelectedFile(e.target.files[0])} onClick={inputFileHandler}></input>
           </div>   
-            <button className="uploadbtn"  onClick={mintNFThandler}>
+            <button className="uploadbtn"  onClick={MintNfts}>
               {btnBusy ? <Spinner /> : "ListNFT"}
             </button>
           </div>
@@ -147,7 +165,7 @@ const CreateNft = () => {
         theme="colored"
         style={{ overflowWrap: "anywhere" }}
         position="bottom-right"
-      />
+      />      
     </section>
     
     

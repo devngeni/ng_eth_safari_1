@@ -108,6 +108,23 @@
   line-height: 29px;
 }
 
+.owner {
+  position: absolute;
+  width: 280px;
+  height: 53px;
+  left: 694px;
+  top: 700px;
+  background: transparent;
+  border-radius: 20px;
+  border: 0ch;
+  color: #05e2ff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+}
+
 .descr {
   position: relative;
   width: 1110px;
@@ -143,6 +160,24 @@
     font-size: 20px;
     line-height: 29px;
   }
+
+  .owner {
+    position: absolute;
+    width: max-content;
+    height: 45px;
+    left: 694px;
+    top: 450px;
+    background: transparent;
+    border-radius: 20px;
+    border: 0ch;
+    color: #05e2ff;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
   .Royalties {
     position: relative;
     width: max-content;

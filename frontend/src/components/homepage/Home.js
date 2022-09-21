@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import NFTTile from '../../NFTTile';
 import MarketplaceJSON from '../../Marketplace.json'
+import Web3Modal from "web3modal";
+import {providerOptions} from "../navbar/providerOptions";
+
+
+const web3Modal = new Web3Modal({
+  cacheProvider: true,
+  providerOptions, // required
+});
 
 const Home = () => {
 
@@ -45,9 +53,9 @@ const Home = () => {
 
   async function getAllNFTs() {
     const ethers = require("ethers");
-    //After adding your Hardhat network to your metamask, this code will get providers and signers
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
+    const provider = await web3Modal.connect();
+    const library = new ethers.providers.Web3Provider(provider);
+    const signer = library.getSigner();
     //Pull the deployed contract instance
 
     let contract = new ethers.Contract(
@@ -67,6 +75,8 @@ const Home = () => {
         const json = await data.json()
         const str = json.image;
         const mylink = str.slice(7);
+        const imageX = ("https://nftstorage.link/ipfs/" + (mylink).replace("#", "%23"));       
+        
 
         let price = ethers.utils.formatUnits(i.price.toString(), "ether");
         let item = {
@@ -74,7 +84,7 @@ const Home = () => {
           tokenId: i.tokenId.toNumber(),
           seller: i.seller,
           owner: i.owner,
-          image: "https://nftstorage.link/ipfs/"+mylink,
+          image: imageX,
           name: json.name,
           description: json.description,
         };

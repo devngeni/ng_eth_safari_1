@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <Routes>
         <Route path="" element={<Landing />} />
-        <Route path="/Home" element={<NavigateTo />} /> 
+        <Route path="/Home/*" element={<NavigateTo />} /> 
         <Route path="/nftpage/:tokenId" element={<Buy />} />       
       </Routes>
     </div>
